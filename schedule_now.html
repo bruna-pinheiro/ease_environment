@@ -46,13 +46,13 @@
 		<a id="logo-nav" href="index.html"><img src="images/logo.png" class="img-logo-nav"></a>
 		<!-- Dropdown Navigation Bar -->
 		<div class="dropdown">
-		  <i class="fas fa-bars dropbtn" onclick="myFunction()"></i>
-		  <div id="myDropdown" class="dropdown-content">
-			<a class="schedule-now" href="schedule_now.html">Schedule Now</a>
-			<a class="nav-links" href="index.html#about">About</a>
-			<a class="nav-links" href="my_bookings.html">My Bookings</a>
-			<a class="nav-links" href="index.html#contact">Contact</a>
-		 </div>
+	  		<i class="fas fa-bars dropbtn" onclick="myFunction()"></i>
+	  		<div id="myDropdown" class="dropdown-content">
+	    		<a class="schedule-now" href="schedule_now.html">Schedule Now</a>
+	  			<a href="#about">About</a>
+	  			<a href="my_bookings.html">My Bookings</a>
+	  			<a href="#contact">Contact</a>
+	  		</div>
 		</div>
 		<!-- Top Navigation Bar -->
 		<div class="nav-group">
@@ -201,11 +201,14 @@
 </div>
 
 <!-- Dropdown Navigation Bar -->
-<script type="text/javascript">
+<script>
+	/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
+// Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
