@@ -215,11 +215,11 @@
     grid-row-gap: 10%;
   }
   .margin-left-25 {
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 0;
+    margin-right: 0;
   }
   .cleaner-details-btn {
-    padding: 12px 23px;
+    padding: 12px 25px;
   }
 }
 
