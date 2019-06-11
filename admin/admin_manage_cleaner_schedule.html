@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../styles/admin_manage_cleaner_schedule.css">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
   <link rel="stylesheet" href="../styles/datepicker.css">
+  <link rel="stylesheet" href="../styles/timepicker.css">
   <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
   <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
@@ -115,7 +116,7 @@
     <a class="sign-out-link sidebar-link" href="../admin/login.html"><i class="fas fa-sign-out-alt fa-rotate-180 sign-out-icon"></i><p class="sign-out-link-text">Sign Out</p></a>
   </div>
 
-  <div class="wrap">  
+  <div class="wrap">
     <div class="main">
       <div class="back-btn-area-mobile">
         <a href="../admin/admin_cleaner_detail.html" class="cleaner-details-btn">Back</a>
@@ -239,7 +240,7 @@
           </div>
         </div>
         <div class="submit-modal-area">
-          <input type="submit" value="Create" class="submit-form-modal">
+          <input type="submit" value="Create" class="submit-form-modal" id="one-time-submit-modal-btn">
         </div>
       </form>
     </div>
@@ -247,13 +248,22 @@
 
   <div id="new-recurring-time-modal" class="second-modal">
     <div class="modal-content">
-      <span class="close" id="recurringClose">&times;</span>
+      <span class="close" id="recurring-close">&times;</span>
       <p class="modal-title">New repeating schedule days</p>
       <form action="">
         <div class="form-modal-area">
           <div class="input-area">
-            <label for="date" class="date label-modal">Date</label>
-            <input type="text" id="recurring-date" class="datepicker openemr-datepicker input-modal" name="date" placeholder="Select a Date">
+            <label for="date" class="date label-modal">Day</label>
+            <select name="filter" class="select-day">
+              <option value="all">All</option>
+              <option value="sunday">Sunday</option>
+              <option value="monday">Monday</option>
+              <option value="tuesday">Tuesday</option>
+              <option value="wednesday">Wednesday</option>
+              <option value="thursday">Thursday</option>
+              <option value="friday">Friday</option>
+              <option value="saturday">Saturday</option>
+            </select>
           </div>
           <div class="input-area">
             <label for="time" class="time label-modal">Time From</label>
@@ -265,7 +275,7 @@
           </div>
         </div>
         <div class="submit-modal-area">
-          <input type="submit" value="Create" class="submit-form-modal">
+          <input type="submit" value="Create" class="submit-form-modal" id="recurring-submit-modal-btn">
         </div>
       </form>
     </div>
@@ -293,35 +303,39 @@
       }
     }
   }
-</script>
 
-<script>
   var modal = document.getElementById("new-one-time-modal");
   var btn = document.getElementById("new-one-time-modal-btn");
   var span = document.getElementById("close-modal-btn");
+  var submit = document.getElementById("one-time-submit-modal-btn");
   btn.onclick = function() {
     modal.style.display = "block";
   }
   span.onclick = function() {
     modal.style.display = "none";
   }
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
+  submit.onclick = function() {
+    modal.style.display = "none";
   }
+
 
   var recurringModal = document.getElementById("new-recurring-time-modal");
   var recurringBtn = document.getElementById("new-recurring-time-modal-btn");
-  var recurringSpan = document.getElementById("recurringClose");
-  btn.onclick = function() {
+  var recurringSpan = document.getElementById("recurring-close");
+  var recurringSubmit = document.getElementById("recurring-submit-modal-btn");
+  recurringBtn.onclick = function() {
     recurringModal.style.display = "block";
   }
-  span.onclick = function() {
+  recurringSpan.onclick = function() {
+    recurringModal.style.display = "none";
+  }
+  recurringSubmit.onclick = function() {
     recurringModal.style.display = "none";
   }
   window.onclick = function(event) {
-    if (event.target == recurringModal) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    } else if (event.target == recurringModal) {
       recurringModal.style.display = "none";
     }
   }

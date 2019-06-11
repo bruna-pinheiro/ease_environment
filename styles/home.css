@@ -999,7 +999,7 @@ input[type=text].estimate-form, .contact-info-form, select, textarea {
     margin: 8% 24% 8% 22%;
   }
   .inline-info {
-    grid-template-columns: 31% 30%;
+    grid-template-columns: 100px 30%;
   }
   .inline-info label {
     margin-top: 20%;

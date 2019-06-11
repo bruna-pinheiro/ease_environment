@@ -47,7 +47,9 @@
     border-color: #c9f0f5;
     border-style: solid;
 }
-
+th {
+    background-color: #39A9DB;
+}
 .ui-datepicker-title {
     line-height: 35px !important;
     margin: 0 10px !important;
