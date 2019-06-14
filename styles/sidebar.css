@@ -25,7 +25,7 @@
 
 /* Style page content */
 .main {
-  margin-left: 160px;
+  margin-left: 128px;
   padding: 0px 10px;
   margin-top: 100px;
 }
@@ -43,13 +43,13 @@
   font-size: 20px;
   text-align: center;
   margin-top: 0;
-  padding: 25px 35px;
+  padding: 14px 35px;
   line-height: 28px;
 }
 .sidebar-link {
   text-align: center;
   color: #FFF;
-  margin: 15% 0;
+  margin: 1% 0;
   padding: 10%;
 }
 .sidebar-link:hover {
@@ -62,7 +62,7 @@
   font-size: 20px;
   text-align: center;
   margin-top: 0;
-  padding: 25px 35px;
+  padding: 8px 35px;
   line-height: 28px;
 }
 .sidebar-icon {

@@ -199,6 +199,9 @@ td {
   .btn-create {
     border-radius: 3px;
   }
+  td {
+    font-size: 13px;
+  }
 }
 
 /*----- Tablet -----*/
